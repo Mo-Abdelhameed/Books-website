@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+
+        .images{
+            top: 1000px;  
+            display: flex;
+            flex-wrap: wrap;
+            justify-content:space-evenly;
+        }
+
+        body {
+            background-image: url("background3.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+            font-style: italic;
+            font-family: 'Redressed', cursive;
+            
+        }
+        
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Want to Read List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-2">
+        <a class="navbar-brand" style="color: rgb(191, 255, 161)">Want to Read List</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+            </ul>
+            <form method="POST" action='/search' class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" name="Search" type="search" placeholder="Search"
+                    aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </div>
+    </nav>
+    <h1>Want to read list</h1><br><br>
+
+    <div class="images">
+        <a href="/sun" style="display: none;" id="sun"> <img  src="/sun.jpg" width="193" height="300"></a>
+        <a href="/leaves" style="display: none;" id="leaves"><img  src="/leaves.jpg" width="193" height="300"></a>
+        <a href="/grapes" style="display: none;" id="grapes"><img  src="/grapes.jpg" width="193" height="300"></a>
+        <a href="/mockingbird" style="display: none;" id="mockingbird"><img src="/mockingbird.jpg" width="193" height="300"></a>
+        <a href="/flies" style="display: none;" id="flies"><img  src="/flies.jpg" width="193" height="300"></a>
+        <a href="/dune" style="display: none;" id="dune"><img src="/dune.jpg" width="193" height="300"></a>
+    </div>
+
+    <script>
+            var list = "<%=l%>";
+            list = list.split(',');
+            for(let i of list){
+
+                if(!i.localeCompare('The Sun and Her Flowers'))
+                    document.getElementById('sun').removeAttribute("style");
+
+                if(!i.localeCompare('To Kill a Mockingbird'))
+                document.getElementById('mockingbird').removeAttribute("style");
+
+                if(!i.localeCompare('Leaves of Grass'))
+                    document.getElementById('leaves').removeAttribute("style");
+
+                if(!i.localeCompare('Lord of the Flies'))
+                    document.getElementById('flies').removeAttribute("style");
+
+                if(!i.localeCompare('Dune'))
+                    document.getElementById('dune').removeAttribute("style");
+
+                if(!i.localeCompare('The Grapes of Wrath'))
+                    document.getElementById('grapes').removeAttribute("style");
+            }
+
+    </script>
+</body>
+</html>
+
+

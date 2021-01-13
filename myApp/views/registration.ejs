@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+
+        form{
+            width: 200px;
+        }
+        span{
+            color: white;
+        }
+
+        body {
+            background-image: url("registerPage.jpg");
+            background-repeat: no-repeat;
+            background-size: 100%;
+            }
+        h1 {
+            color: rgb(109, 54, 54);
+            text-align: center;
+            font-style: italic;
+            font-family: 'Redressed', cursive;
+            
+        }
+        .cont {
+            position:relative;
+            left:45%;
+            top:250px;
+            color: white;
+            
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+    </div>
+    <div class="cont">
+        <form method='post' action='/register'>
+            <span><%=x%></span> <br>
+            Username: <br>
+            <input type="text" id="user" name="username"> <br>
+            Password: <br>
+            <input type="password" id="password" name="password"> <br> <br>
+            <input type="submit" id="simple_click" class="btn btn-secondary" value="Register"> <br> 
+           <span><%=y%></span>
+        </form>
+    </div>
+</body>
+
+</html>
